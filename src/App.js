@@ -1,8 +1,27 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import * as firebase from 'firebase';
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      name: "Default name"
+    };
+  }
+
+  componentDidMount() {
+    const rootRef = firebase.database().ref();
+    const nameRef = rootRef.child('name');
+    nameRef.on('value', snap => {
+      this.setState({
+        name: snap.val()
+      });
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -11,7 +30,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Current user: {this.state.name}
         </p>
       </div>
     );
