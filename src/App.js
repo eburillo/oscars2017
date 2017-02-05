@@ -2,24 +2,30 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import * as firebase from 'firebase';
+import Category from './Category';
 
 class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      name: "Default name"
+      categories: []
     };
   }
 
   componentDidMount() {
     const rootRef = firebase.database().ref();
-    const nameRef = rootRef.child('name');
-    nameRef.on('value', snap => {
+    const categoriesRef = rootRef.child('categories');
+    categoriesRef.on('value', snap => {
       this.setState({
-        name: snap.val()
+        categories: snap.val()
       });
+
     });
+  }
+
+  renderCategory(cat, i) {
+    return <Category key={i} title={cat.title} nominees={cat.nominees}></Category>
   }
 
   render() {
@@ -27,11 +33,14 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Oscars 2017 Ballot</h2>
         </div>
         <p className="App-intro">
-          Current user: {this.state.name}
+          Categories:
         </p>
+        <div>
+          {this.state.categories.map((cat, i) => this.renderCategory(cat, i))}
+        </div>
       </div>
     );
   }
