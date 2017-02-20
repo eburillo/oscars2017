@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 
 
 class Nominee extends Component {
@@ -7,7 +6,7 @@ class Nominee extends Component {
   render() {
     return (
       <div>
-        <h4>{this.props.id}</h4>
+        <p>{this.props.film[this.props.primary]}</p>
       </div>
     )
   }

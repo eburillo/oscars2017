@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import * as firebase from 'firebase';
 import App from './App';
-import './index.css';
+
+import './css/index.css';
 
 // Make sure you swap this out with your Firebase app's config
 const config = {
