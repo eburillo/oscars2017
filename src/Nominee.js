@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {StyleSheet, css} from 'aphrodite';
 
 
 class Nominee extends Component {
@@ -6,10 +7,17 @@ class Nominee extends Component {
   render() {
     return (
       <div>
-        <p>{this.props.film[this.props.primary]}</p>
+        <p className={css(styles.nomineeText)}>{this.props.film[this.props.primary]}</p>
       </div>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  nomineeText: {
+      fontSize: "14px",
+      marginBottom: "3px"
+  }
+});
 
 export default Nominee;
