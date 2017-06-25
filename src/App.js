@@ -1,33 +1,33 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import * as firebase from 'firebase';
-import Category from './Category';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import * as firebase from 'firebase'
+import Category from './Category'
 
 class App extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       categories: [],
       films: []
-    };
+    }
   }
 
   componentDidMount() {
-    const rootRef = firebase.database().ref();
-    const categoriesRef = rootRef.child('categories');
-    const filmsRef = rootRef.child('films');
+    const rootRef = firebase.database().ref()
+    const categoriesRef = rootRef.child('categories')
+    const filmsRef = rootRef.child('films')
 
     filmsRef.on('value', snap => {
       this.setState({
         films: snap.val()
-      });
-    });
+      })
+    })
 
     categoriesRef.on('value', snap => {
       this.setState({
         categories: snap.val()
-      });
-    });
+      })
+    })
   }
 
   // renderCategory(cat, i) {
@@ -35,15 +35,15 @@ class App extends Component {
   // }
 
   renderCategory(category, i) {
-    return(
+    return (
       <Category
         key={i}
         index={i}
         title={category.title}
         nominees={category.nominees}
         primary={category.primary}
-        films={category.nominees.map((elem) => this.state.films[elem])}>
-      </Category>
+        films={category.nominees.map(elem => this.state.films[elem])}
+      />
     )
   }
 
@@ -61,8 +61,8 @@ class App extends Component {
           {this.state.categories.map((category, i) => this.renderCategory(category, i))}
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

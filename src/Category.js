@@ -1,19 +1,36 @@
-import React, { Component } from 'react';
-import Nominee from './Nominee.js';
+import React, { Component } from 'react'
+import Nominee from './Nominee.js'
 
 class Category extends Component {
+  constructor() {
+    super()
+    this.state = {
+      selectedOption: ''
+    }
+
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(e) {
+    this.setState({
+      selectedOption: e.target.value
+    })
+  }
 
   renderNominee(nominee, i) {
-    const films = this.props.films;
-    const primary = this.props.primary;
-    const nominees = this.props.nominees;
-
-    // console.log(`primary`, films[1][`${primary}`]);
-    console.log(primary);
+    const primary = this.props.primary
+    const nominees = this.props.nominees
+    const selectedOption = this.state.selectedOption
+    const option = nominee[primary]
 
     return (
-      // <Nominee key={i.toString() + nominee} id={nominee}></Nominee>
-      <Nominee key={`${primary}-${nominees[i]}`} id={nominee} primary={primary} film={nominee}></Nominee>
+      <Nominee
+        key={`${primary}-${nominees[i]}`}
+        id={nominee}
+        option={option}
+        cheecked={selectedOption === option}
+        change={e => this.handleChange(e)}
+      />
     )
   }
 
@@ -21,12 +38,12 @@ class Category extends Component {
     return (
       <div>
         <h2>{this.props.title}</h2>
-        <div>
+        <form>
           {this.props.films.map((nominee, i) => this.renderNominee(nominee, i))}
-        </div>
+        </form>
       </div>
     )
   }
 }
 
-export default Category;
+export default Category
