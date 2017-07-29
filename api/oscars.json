@@ -1,0 +1,414 @@
+{
+	"films": [
+		{
+			"id": 0,
+			"title": "Arrival",
+			"director": "Denis Villeneuve"
+		},
+		{
+			"id": 1,
+			"title": "Fences",
+			"actor": "Denzel Washington",
+			"supporting_actress": "Viola Davis"
+		},
+		{
+			"id": 2,
+			"title": "Hacksaw Ridge",
+			"actor": "Andrew Garfield",
+			"director": "Mel Gibson"
+		},
+		{
+			"id": 3,
+			"title": "Hell or High Water",
+			"supporting_actor": "Jeff Bridges"
+		},
+		{
+			"id": 4,
+			"title": "Hidden Figures",
+			"supporting_actress": "Octavia Spencer"
+		},
+		{
+			"id": 5,
+			"title": "La La Land",
+			"actor": "Ryan Gosling",
+			"actress": "Emma Stone",
+			"director": "Damien Chazelle",
+			"song": ["Audition (The Fools Who Dream)", "City of Stars"]
+		},
+		{
+			"id": 6,
+			"title": "Lion",
+			"supporting_actor": "Dev Patel",
+			"supporting_actress": "Nicole Kidman"
+		},
+		{
+			"id": 7,
+			"title": "Manchester by the Sea",
+			"actor": "Casey Affleck",
+			"supporting_actor": "Lucas Hedges",
+			"supporting_actress": "Michelle Williams",
+			"director": "Kenneth Lonergan"
+		},
+		{
+			"id": 8,
+			"title": "Moonlight",
+			"supporting_actor": "Mahershala Ali",
+			"supporting_actress": "Naomie Harris",
+			"director": "Barry Jenkins"
+		},
+		{
+			"id": 9,
+			"title": "Captain Fantastic",
+			"actor": "Viggo Mortensen"
+		},
+		{
+			"id": 10,
+			"title": "Elle",
+			"actress": "Isabelle Huppert"
+		},
+		{
+			"id": 11,
+			"title": "Loving",
+			"actress": "Ruth Negga"
+		},
+		{
+			"id": 12,
+			"title": "Jackie",
+			"actress": "Natalie Portman"
+		},
+		{
+			"id": 13,
+			"title": "Florence Foster Jenkins",
+			"actress": "Meryl Streep"
+		},
+		{
+			"id": 14,
+			"title": "Nocturnal Animals",
+			"supporting_actor": "Michael Shannon"
+		},
+		{
+			"id": 15,
+			"title": "Kubo and the Two Strings"
+		},
+		{
+			"id": 16,
+			"title": "Moana",
+			"song": "How Far I'll Go"
+		},
+		{
+			"id": 17,
+			"title": "My Life as a Zucchini"
+		},
+		{
+			"id": 18,
+			"title": "The Red Turtle"
+		},
+		{
+			"id": 19,
+			"title": "Zootopia"
+		},
+		{
+			"id": 20,
+			"title": "Silence"
+		},
+		{
+			"id": 21,
+			"title": "Allied"
+		},
+		{
+			"id": 22,
+			"title": "Fantastic Beasts and Where to Find Them"
+		},
+		{
+			"id": 23,
+			"title": "20th Century Women"
+		},
+		{
+			"id": 24,
+			"title": "The Lobster"
+		},
+		{
+			"id": 25,
+			"title": "A Man Called Ove",
+			"country": "Sweden"
+		},
+		{
+			"id": 26,
+			"title": "Land of Mine",
+			"country": "Denmark"
+		},
+		{
+			"id": 27,
+			"title": "The Salesman",
+			"country": "Iran"
+		},
+		{
+			"id": 28,
+			"title": "Tanna",
+			"country": "Australia"
+		},
+		{
+			"id": 29,
+			"title": "Toni Erdmann",
+			"country": "Germany"
+		},
+		{
+			"id": 30,
+			"title": "Deepwater Horizon"
+		},
+		{
+			"id": 31,
+			"title": "Sully"
+		},
+		{
+			"id": 32,
+			"title": "Doctor Strange"
+		},
+		{
+			"id": 33,
+			"title": "The Jungle Book"
+		},
+		{
+			"id": 34,
+			"title": "Rogue One: A Star Story"
+		},
+		{
+			"id": 35,
+			"title": "Blind Vaysha"
+		},
+		{
+			"id": 36,
+			"title": "Borrowed Time"
+		},
+		{
+			"id": 37,
+			"title": "Pear Cider and Cigarettes"
+		},
+		{
+			"id": 38,
+			"title": "Pearl"
+		},
+		{
+			"id": 39,
+			"title": "Piper"
+		},
+		{
+			"id": 40,
+			"title": "Ennemis Interieurs"
+		},
+		{
+			"id": 41,
+			"title": "La Femme et le TGV"
+		},
+		{
+			"id": 42,
+			"title": "Silent Nights"
+		},
+		{
+			"id": 43,
+			"title": "Sing (Mindenki)"
+		},
+		{
+			"id": 44,
+			"title": "Timecode"
+		},
+		{
+			"id": 45,
+			"title": "4.1 Miles"
+		},
+		{
+			"id": 46,
+			"title": "Extremis"
+		},
+		{
+			"id": 47,
+			"title": "Joe´s Violin"
+		},
+		{
+			"id": 48,
+			"title": "Watani: My Homeland"
+		},
+		{
+			"id": 49,
+			"title": "The White Helmets"
+		},
+		{
+			"id": 50,
+			"title": "Passengers"
+		},
+		{
+			"id": 51,
+			"title": "Trolls",
+			"song": "Can't Stop the Feeling"
+		},
+		{
+			"id": 52,
+			"title": "Jim: The James Foley Story",
+			"song": "The Empty Chair"
+		},
+		{
+			"id": 53,
+			"title": "Hail, Caesar!"
+		},
+		{
+			"id": 54,
+			"title": "Star Trek Beyond"
+		},
+		{
+			"id": 55,
+			"title": "13th"
+		},
+		{
+			"id": 56,
+			"title": "Fire at Sea"
+		},
+		{
+			"id": 57,
+			"title": "I Am Not Your Negro"
+		},
+		{
+			"id": 58,
+			"title": "Life, Animated"
+		},
+		{
+			"id": 59,
+			"title": "O. J.: Made in America"
+		},
+		{
+			"id": 60,
+			"title": "Suicide Squad"
+		},
+		{
+			"id": 61,
+			"title": "13 Hours"
+		}
+	],
+	"categories": [
+		{
+			"title": "Best picture",
+			"primary": "title",
+			"nominees": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+		},
+		{
+			"title": "Director",
+			"primary": "director",
+			"secondary": "title",
+			"nominees": [5, 2, 8, 7, 0]
+		},
+		{
+			"title": "Actor in a Leading Role",
+			"primary": "actor",
+			"secondary": "title",
+			"nominees": [7, 2, 5, 9, 1]
+		},
+		{
+			"title": "Actress in a Leading Role",
+			"primary": "actress",
+			"secondary": "title",
+			"nominees": [5, 10, 11, 12, 13]
+		},
+		{
+			"title": "Actor in a Supporting Role",
+			"primary": "supporting_actor",
+			"secondary": "title",
+			"nominees": [8, 3, 7, 6, 14]
+		},
+		{
+			"title": "Actress in a Supporting Role",
+			"primary": "supporting_actress",
+			"secondary": "title",
+			"nominees": [1, 8, 6, 4, 7]
+		},
+		{
+			"title": "Original Screenplay",
+			"primary": "title",
+			"nominees": [23, 3, 5, 24, 7]
+		},
+		{
+			"title": "Adapted Screenplay",
+			"primary": "title",
+			"nominees": [0, 1, 4, 6, 8]
+		},
+		{
+			"title": "Foreign Language Film",
+			"primary": "title",
+			"nominees": [25, 26, 27, 28, 29]
+		},
+		{
+			"title": "Animated Feature",
+			"primary": "title",
+			"nominees": [15, 16, 17, 18, 19]
+		},
+		{
+			"title": "Sound Editing",
+			"primary": "title",
+			"nominees": [0, 30, 2, 5, 31]
+		},
+		{
+			"title": "Visual Effects",
+			"primary": "title",
+			"nominees": [30, 32, 33, 15, 34]
+		},
+		{
+			"title": "Film Editing",
+			"primary": "title",
+			"nominees": [0, 2, 3, 5, 8]
+		},
+		{
+			"title": "Short film, Animated",
+			"primary": "title",
+			"nominees": [35, 36, 37, 38, 39]
+		},
+		{
+			"title": "Short film, Live Action",
+			"primary": "title",
+			"nominees": [40, 41, 42, 43, 44]
+		},
+		{
+			"title": "Documentary Short Subject",
+			"primary": "title",
+			"nominees": [45, 46, 47, 48, 49]
+		},
+		{
+			"title": "Original Score",
+			"primary": "title",
+			"nominees": [12, 5, 6, 8, 50]
+		},
+		{
+			"title": "Original song",
+			"primary": "song",
+			"secondary": "title",
+			"nominees": [5, 51, 52, 16]
+		},
+		{
+			"title": "Production Design",
+			"primary": "title",
+			"nominees": [0, 22, 53, 5, 50]
+		},
+		{
+			"title": "Cinematography",
+			"primary": "title",
+			"nominees": [0, 5, 6, 8, 20]
+		},
+		{
+			"title": "Costume Design",
+			"primary": "title",
+			"nominees": [21, 22, 13, 12, 5]
+		},
+		{
+			"title": "Makeup",
+			"primary": "title",
+			"nominees": [25, 54, 60]
+		},
+		{
+			"title": "Documentary Feature",
+			"primary": "title",
+			"nominees": [55, 56, 57, 58, 59]
+		},
+		{
+			"title": "Sound mixing",
+			"primary": "title",
+			"nominees": [5, 2, 34, 0, 61]
+		}
+	]
+}
