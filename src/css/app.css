@@ -12,3 +12,32 @@
 .App-intro {
   font-size: large;
 }
+
+.ballot-from {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+
+.category-block {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    min-height: 300px;
+}
+
+.nominee-block {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    display: block;
+    overflow: hidden;
+}
+
+.nominee-block > label {
+    width: 100%;
+    display: block;
+}
+
+.nominee-title {
+    margin-right: 10px;
+}
