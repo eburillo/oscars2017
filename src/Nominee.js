@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import oscarsJSON from "../api/oscars.json";
+import React, { Component } from 'react';
+import oscarsJSON from '../api/oscars.json';
 
 class Nominee extends Component {
   getData = () => {
@@ -9,14 +9,19 @@ class Nominee extends Component {
   };
 
   render() {
-    const { primary, categoryTitle } = this.props;
+    const { id, primary, categoryTitle, categoryId, selectFilm } = this.props;
     const data = this.getData();
 
     return (
       <div className="nominee-block">
         <label>
           <span className="nominee-title">{data[primary]}</span>
-          <input type="radio" name={categoryTitle} value={data[primary]} />
+          <input
+            type="radio"
+            name={categoryTitle}
+            value={data[primary]}
+            onClick={() => selectFilm(id, categoryId)}
+          />
         </label>
       </div>
     );

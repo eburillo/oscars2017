@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import Category from "./Category";
-import oscarsJSON from "../api/oscars.json";
+import React, { Component } from 'react';
+import Category from './Category';
+import oscarsJSON from '../api/oscars.json';
 
 class CategoriesList extends Component {
   render() {
     const { categories } = oscarsJSON;
     return (
       <div>
-        {categories.map((category, i) => (
-          <Category key={i} index={i} categoryProps={category} />
+        {categories.map((categoryProps, i) => (
+          <Category {...this.props} categoryProps={categoryProps} key={i} index={i} />
         ))}
       </div>
     );

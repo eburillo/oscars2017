@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import Nominee from "./Nominee.js";
+import React, { Component } from 'react';
+import Nominee from './Nominee.js';
 
 class Category extends Component {
   render() {
-    const { title, primary, nominees } = this.props.categoryProps;
+    const { id, title, nominees, primary } = this.props.categoryProps;
 
     return (
       <div className="category-block">
@@ -11,10 +11,12 @@ class Category extends Component {
         <div className="category-nominees">
           {nominees.map((filmId, i) => (
             <Nominee
-              key={`${title}-${i}`}
+              {...this.props}
               id={filmId}
-              primary={primary}
+              categoryId={id}
               categoryTitle={title}
+              primary={primary}
+              key={`${title}-${i}`}
             />
           ))}
         </div>
