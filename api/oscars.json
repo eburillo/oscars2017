@@ -285,127 +285,151 @@
 	],
 	"categories": [
 		{
+			"id": 0,
 			"title": "Best picture",
 			"primary": "title",
 			"nominees": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 		},
 		{
+			"id": 1,
 			"title": "Director",
 			"primary": "director",
 			"secondary": "title",
 			"nominees": [5, 2, 8, 7, 0]
 		},
 		{
+			"id": 2,
 			"title": "Actor in a Leading Role",
 			"primary": "actor",
 			"secondary": "title",
 			"nominees": [7, 2, 5, 9, 1]
 		},
 		{
+			"id": 3,
 			"title": "Actress in a Leading Role",
 			"primary": "actress",
 			"secondary": "title",
 			"nominees": [5, 10, 11, 12, 13]
 		},
 		{
+			"id": 4,
 			"title": "Actor in a Supporting Role",
 			"primary": "supporting_actor",
 			"secondary": "title",
 			"nominees": [8, 3, 7, 6, 14]
 		},
 		{
+			"id": 5,
 			"title": "Actress in a Supporting Role",
 			"primary": "supporting_actress",
 			"secondary": "title",
 			"nominees": [1, 8, 6, 4, 7]
 		},
 		{
+			"id": 6,
 			"title": "Original Screenplay",
 			"primary": "title",
 			"nominees": [23, 3, 5, 24, 7]
 		},
 		{
+			"id": 7,
 			"title": "Adapted Screenplay",
 			"primary": "title",
 			"nominees": [0, 1, 4, 6, 8]
 		},
 		{
+			"id": 8,
 			"title": "Foreign Language Film",
 			"primary": "title",
 			"nominees": [25, 26, 27, 28, 29]
 		},
 		{
+			"id": 9,
 			"title": "Animated Feature",
 			"primary": "title",
 			"nominees": [15, 16, 17, 18, 19]
 		},
 		{
+			"id": 10,
 			"title": "Sound Editing",
 			"primary": "title",
 			"nominees": [0, 30, 2, 5, 31]
 		},
 		{
+			"id": 11,
 			"title": "Visual Effects",
 			"primary": "title",
 			"nominees": [30, 32, 33, 15, 34]
 		},
 		{
+			"id": 12,
 			"title": "Film Editing",
 			"primary": "title",
 			"nominees": [0, 2, 3, 5, 8]
 		},
 		{
+			"id": 13,
 			"title": "Short film, Animated",
 			"primary": "title",
 			"nominees": [35, 36, 37, 38, 39]
 		},
 		{
+			"id": 14,
 			"title": "Short film, Live Action",
 			"primary": "title",
 			"nominees": [40, 41, 42, 43, 44]
 		},
 		{
+			"id": 15,
 			"title": "Documentary Short Subject",
 			"primary": "title",
 			"nominees": [45, 46, 47, 48, 49]
 		},
 		{
+			"id": 16,
 			"title": "Original Score",
 			"primary": "title",
 			"nominees": [12, 5, 6, 8, 50]
 		},
 		{
+			"id": 17,
 			"title": "Original song",
 			"primary": "song",
 			"secondary": "title",
 			"nominees": [5, 51, 52, 16]
 		},
 		{
+			"id": 18,
 			"title": "Production Design",
 			"primary": "title",
 			"nominees": [0, 22, 53, 5, 50]
 		},
 		{
+			"id": 19,
 			"title": "Cinematography",
 			"primary": "title",
 			"nominees": [0, 5, 6, 8, 20]
 		},
 		{
+			"id": 20,
 			"title": "Costume Design",
 			"primary": "title",
 			"nominees": [21, 22, 13, 12, 5]
 		},
 		{
+			"id": 21,
 			"title": "Makeup",
 			"primary": "title",
 			"nominees": [25, 54, 60]
 		},
 		{
+			"id": 22,
 			"title": "Documentary Feature",
 			"primary": "title",
 			"nominees": [55, 56, 57, 58, 59]
 		},
 		{
+			"id": 23,
 			"title": "Sound mixing",
 			"primary": "title",
 			"nominees": [5, 2, 34, 0, 61]
