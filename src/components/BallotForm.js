@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CategoriesList from './CategoriesList';
-import oscarsJSON from '../api/oscars.json';
+import oscarsJSON from '../../api/oscars.json';
 
 class BallotForm extends Component {
   constructor() {
@@ -26,7 +26,7 @@ class BallotForm extends Component {
 
   render = () => (
     <form className="ballot-from">
-      <CategoriesList selectFilm={this.handleSelectFilm} />
+      <CategoriesList />
     </form>
   );
 }

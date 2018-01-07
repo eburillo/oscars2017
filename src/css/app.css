@@ -26,18 +26,18 @@
     min-height: 300px;
 }
 
-.nominee-block {
+.candidate-block {
     margin-bottom: 10px;
     padding-left: 30px;
     display: block;
     overflow: hidden;
 }
 
-.nominee-block > label {
+.candidate-block > label {
     width: 100%;
     display: block;
 }
 
-.nominee-title {
+.candidate-title {
     margin-right: 10px;
 }
