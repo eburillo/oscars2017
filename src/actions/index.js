@@ -4,6 +4,12 @@ export const getCategories = () => {
   };
 };
 
+export const sendVotes = () => {
+  return {
+    type: 'SEND_VOTES',
+  };
+};
+
 export const voteCandidate = (categoryId, movieId) => {
   return {
     type: 'VOTE_CANDIDATE',

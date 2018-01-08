@@ -1,17 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Category from './Category';
+import SubmitButton from './SubmitButton';
 let App = ({ categories }) => {
   return (
     <div className="App">
-      <div className="App-header">
+      <header className="App-header">
         <h2>Oscars 2017 Ballot</h2>
-      </div>
-      <div className="ballot-form">
+      </header>
+      <section className="ballot-form">
         <ul>
           {categories.map((category, i) => <Category {...category} key={i} />)}
         </ul>
-      </div>
+        <SubmitButton />
+      </section>
+      <footer className="App-footer">
+        2018
+      </footer>
     </div>
   );
 };

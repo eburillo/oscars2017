@@ -2,7 +2,8 @@
   text-align: center;
 }
 
-.App-header {
+.App-header,
+.App-footer {
   background-color: #222;
   height: 80px;
   padding: 20px;
