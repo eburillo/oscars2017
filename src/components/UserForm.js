@@ -24,23 +24,21 @@ class UserForm extends Component {
     router.push('/ballot');
   }
 
-  render() {
-    return (
-      <section className="userForm">
-        <form onSubmit={e => this.handleSubmit(e)}>
-          <label>
-            <span>Choose League: </span>
-            <input onChange={e => this.handleChange(e)} type="text" name="league" required />
-          </label>
-          <label>
-            <span>Type your email: </span>
-            <input onChange={e => this.handleChange(e)} type="email" name="email" required />
-          </label>
-          <input type="submit" value="go vote" />
-        </form>
-      </section>
-    );
-  }
+  render = () => (
+    <section className="userForm">
+      <form onSubmit={e => this.handleSubmit(e)}>
+        <label>
+          <span>Choose League: </span>
+          <input onChange={e => this.handleChange(e)} type="text" name="league" required />
+        </label>
+        <label>
+          <span>Type your email: </span>
+          <input onChange={e => this.handleChange(e)} type="email" name="email" required />
+        </label>
+        <input type="submit" value="go vote" />
+      </form>
+    </section>
+  );
 }
 
 UserForm = connect()(UserForm);

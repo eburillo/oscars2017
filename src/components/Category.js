@@ -12,17 +12,15 @@ class Category extends Component {
       <div className="category-block">
         <h2 className="category-title">{title}</h2>
         <ul className="category-candidates">
-          {candidates.map((movieId, i) => {
-            return (
-              <Candidate
-                candidateTitle={this.getCandidateTitle(movieId)}
-                categoryId={id}
-                category={title}
-                movieId={movieId}
-                key={i}
-              />
-            );
-          })}
+          {candidates.map((movieId, i) => (
+            <Candidate
+              candidateTitle={this.getCandidateTitle(movieId)}
+              categoryId={id}
+              category={title}
+              movieId={movieId}
+              key={i}
+            />
+          ))}
         </ul>
       </div>
     );

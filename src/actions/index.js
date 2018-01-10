@@ -1,27 +1,19 @@
-export const getCategories = () => {
-  return {
-    type: 'GET_CATEGORIES',
-  };
-};
+export const getCategories = () => ({
+  type: 'GET_CATEGORIES',
+});
 
-export const saveUserData = (league, email) => {
-  return {
-    type: 'SAVE_USER_DATA',
-    league,
-    email,
-  };
-};
+export const saveUserData = (league, email) => ({
+  type: 'SAVE_USER_DATA',
+  league,
+  email,
+});
 
-export const sendVotes = () => {
-  return {
-    type: 'SEND_VOTES',
-  };
-};
+export const sendVotes = () => ({
+  type: 'SEND_VOTES',
+});
 
-export const voteCandidate = (categoryId, movieId) => {
-  return {
-    type: 'VOTE_CANDIDATE',
-    categoryId,
-    movieId,
-  };
-};
+export const voteCandidate = (categoryId, movieId) => ({
+  type: 'VOTE_CANDIDATE',
+  categoryId,
+  movieId,
+});
