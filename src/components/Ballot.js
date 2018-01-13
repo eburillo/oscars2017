@@ -10,7 +10,7 @@ class Ballot extends Component {
 
   checkAuth() {
     const { router, user } = this.props;
-    if (!user.logged) {
+    if (!user.isLogged) {
       router.push('/');
     }
   }

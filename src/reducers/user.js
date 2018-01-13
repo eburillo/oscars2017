@@ -1,7 +1,7 @@
 const initialState = {
   league: '',
   email: '',
-  logged: false,
+  isLogged: false,
 };
 
 const users = (state = initialState, action) => {
@@ -11,7 +11,7 @@ const users = (state = initialState, action) => {
       return {
         league: action.league,
         email: action.email,
-        logged: true,
+        isLogged: true,
       };
     default:
       return state;
