@@ -7,6 +7,7 @@ import { getCategories } from './actions';
 import UserForm from './components/UserForm';
 import Ballot from './components/Ballot';
 import oscarsApp from './reducers';
+import registerServiceWorker from './registerServiceWorker';
 
 import './css/index.css';
 
@@ -22,3 +23,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+registerServiceWorker();
