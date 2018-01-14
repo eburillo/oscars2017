@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { getCategories } from './actions';
 import UserForm from './components/UserForm';
 import Ballot from './components/Ballot';
+import Summary from './components/Summary';
 import oscarsApp from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -19,6 +20,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={UserForm} />
       <Route path="ballot" component={Ballot} />
+      <Route path="summary" component={Summary} />
     </Router>
   </Provider>,
   document.getElementById('root')

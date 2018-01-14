@@ -1,5 +1,5 @@
-import oscarsJSON from '../../api/oscars.json';
-import { any, propEq, propOr } from 'ramda';
+import oscarsJSON from '../api/oscars.json';
+import { propOr } from 'ramda';
 
 const categoriesList = propOr([], 'categories')(oscarsJSON);
 const initialState = categoriesList.map(cat => ({
@@ -14,9 +14,6 @@ const votes = (state = initialState, action) => {
         item =>
           item.category === action.categoryId ? Object.assign(item, { vote: action.movieId }) : item
       );
-    case 'SEND_VOTES':
-      any(propEq('vote', null))(state) ? console.log('incomplete') : console.log('sent!');
-      return state;
     default:
       return state;
   }

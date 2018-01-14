@@ -16,7 +16,7 @@ class Ballot extends Component {
   }
 
   render() {
-    const { categories } = this.props;
+    const { categories, router } = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -26,7 +26,7 @@ class Ballot extends Component {
           <ul>
             {categories.map((category, i) => <Category {...category} key={i} />)}
           </ul>
-          <SubmitButton />
+          <SubmitButton router={router} />
         </main>
         <footer className="App-footer">
           2018

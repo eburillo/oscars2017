@@ -1,4 +1,4 @@
-import oscarsJSON from '../../api/oscars.json';
+import oscarsJSON from '../api/oscars.json';
 import { propOr } from 'ramda';
 
 const categories = (state = [], action) => {

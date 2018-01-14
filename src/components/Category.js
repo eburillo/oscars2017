@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { pathOr } from 'ramda';
-import oscarsJSON from '../../api/oscars.json';
+import oscarsJSON from '../api/oscars.json';
 import Candidate from './Candidate.js';
 
 class Category extends Component {
