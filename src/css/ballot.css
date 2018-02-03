@@ -1,0 +1,75 @@
+.ballot-form {
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.ballot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.category-block {
+  padding: 0.5rem;
+}
+
+.category-title {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 0.3rem;
+  border-bottom: 1px solid lightgray;
+  min-height: 3.5rem;
+  display: flex;
+  justify-content:flex-end;
+  flex-direction: column;
+}
+
+.category-candidates {
+  display: flex;
+  flex-direction: column;
+}
+
+.candidate-block {
+    overflow: hidden;
+    position: relative;
+}
+
+.candidate-block > label {
+    width: 100%;
+    min-height: 2rem;
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-left: 0.5rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked ~ label {
+  opacity: 1;
+	background-color: green;
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  .ballot-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .ballot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .ballot-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

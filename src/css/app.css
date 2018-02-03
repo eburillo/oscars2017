@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-header,
 .App-footer {
   background-color: #222;
@@ -12,33 +8,4 @@
 
 .App-intro {
   font-size: large;
-}
-
-.ballot-form {
-    max-width: 1024px;
-    margin: 0 auto;
-}
-
-
-.category-block {
-    display: inline-block;
-    vertical-align: top;
-    width: 25%;
-    min-height: 300px;
-}
-
-.candidate-block {
-    margin-bottom: 10px;
-    padding-left: 30px;
-    display: block;
-    overflow: hidden;
-}
-
-.candidate-block > label {
-    width: 100%;
-    display: block;
-}
-
-.candidate-title {
-    margin-right: 10px;
 }

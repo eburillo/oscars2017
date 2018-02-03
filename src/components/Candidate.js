@@ -2,16 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { voteCandidate } from '../actions';
 
-let Candidate = ({ dispatch, categoryId, movieId, candidateTitle, category }) => (
+let Candidate = ({ dispatch, categoryId, movieId, candidateTitle, category, candidateKey }) => (
   <div className="candidate-block">
-    <label>
+    <input
+      id={`${categoryId}-${candidateKey}`}
+      type="radio"
+      name={category}
+      value={candidateTitle}
+      onClick={() => dispatch(voteCandidate(categoryId, movieId, category, candidateTitle))}
+    />
+    <label htmlFor={`${categoryId}-${candidateKey}`}>
       <span className="candidate-title">{candidateTitle}</span>
-      <input
-        type="radio"
-        name={category}
-        value={candidateTitle}
-        onClick={() => dispatch(voteCandidate(categoryId, movieId, category, candidateTitle))}
-      />
     </label>
   </div>
 );

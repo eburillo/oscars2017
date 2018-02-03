@@ -23,7 +23,7 @@ class Ballot extends Component {
           <h2>Oscars 2017 Ballot</h2>
         </header>
         <main className="ballot-form">
-          <ul>
+          <ul className="ballot-grid">
             {categories.map((category, i) => <Category {...category} key={i} />)}
           </ul>
           <SubmitButton router={router} />
