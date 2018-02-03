@@ -12,8 +12,10 @@ export const sendVotes = () => ({
   type: 'SEND_VOTES',
 });
 
-export const voteCandidate = (categoryId, movieId) => ({
+export const voteCandidate = (categoryId, movieId, category, candidateTitle) => ({
   type: 'VOTE_CANDIDATE',
   categoryId,
   movieId,
+  category,
+  candidateTitle,
 });

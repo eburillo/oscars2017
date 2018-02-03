@@ -16,7 +16,7 @@ class Summary extends Component {
   render = () => (
     <div className="candidate-block">
       {this.props.votes.map(vote => (
-        <div key={vote.category}>{`${vote.category} - ${vote.vote}`} </div>
+        <div key={vote.category}>{`${vote.categoryName} - ${vote.voteName}`} </div>
       ))}
     </div>
   );

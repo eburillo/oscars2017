@@ -18,7 +18,7 @@ store.dispatch(getCategories());
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={UserForm} />
+      {/* <Route path="/" component={UserForm} /> */}
       <Route path="ballot" component={Ballot} />
       <Route path="summary" component={Summary} />
     </Router>

@@ -1,4 +1,5 @@
 @import url("app.css");
+@import url("summary.css");
 
 body, p, div, ul {
   margin: 0;

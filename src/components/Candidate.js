@@ -10,7 +10,7 @@ let Candidate = ({ dispatch, categoryId, movieId, candidateTitle, category }) =>
         type="radio"
         name={category}
         value={candidateTitle}
-        onClick={() => dispatch(voteCandidate(categoryId, movieId))}
+        onClick={() => dispatch(voteCandidate(categoryId, movieId, category, candidateTitle))}
       />
     </label>
   </div>
