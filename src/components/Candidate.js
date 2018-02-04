@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { voteCandidate } from '../actions';
+import Icon from './Icon'
 
 let Candidate = ({ dispatch, categoryId, movieId, candidateTitle, category, candidateKey }) => (
   <div className="candidate-block">
@@ -13,6 +14,7 @@ let Candidate = ({ dispatch, categoryId, movieId, candidateTitle, category, cand
     />
     <label htmlFor={`${categoryId}-${candidateKey}`}>
       <span className="candidate-title">{candidateTitle}</span>
+      <Icon icon={'star'} />
     </label>
   </div>
 );

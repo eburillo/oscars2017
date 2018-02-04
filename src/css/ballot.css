@@ -13,8 +13,9 @@
 }
 
 .category-title {
-  font-size: 1.2rem;
-  text-transform: uppercase;
+  font-size: 1.1rem;
+  /* text-transform: uppercase; */
+  font-weight: bold;
   padding: 0.3rem;
   border-bottom: 1px solid lightgray;
   min-height: 3.5rem;
@@ -38,9 +39,15 @@
     min-height: 2rem;
     display: block;
     display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    padding-left: 0.5rem;
+    justify-content: space-between;
+    padding: 0.2rem 0.5rem;
+    align-items: center;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.candidate-block > label > span {
+    max-width: 92%;
+    font-size: 1rem;
 }
 
 input[type="radio"] {
@@ -49,8 +56,18 @@ input[type="radio"] {
 
 input[type="radio"]:checked ~ label {
   opacity: 1;
-	background-color: green;
-  color: white;
+	border: 2px solid #ffbb4d;
+  background-color: rgba(255, 187, 77, 0.1);
+  border-radius: 30px;
+}
+
+input[type="radio"] ~ label > svg {
+  opacity: 0;
+}
+
+input[type="radio"]:checked ~ label > svg {
+  opacity: 1;
+  fill: #ffbb4d;
 }
 
 @media (min-width: 1024px) {
