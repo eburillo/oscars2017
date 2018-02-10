@@ -37,8 +37,7 @@ class Ballot extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
-  return { categories: state.categories, user: state.user };
+  return { categories: state.data.categories, user: state.user };
 };
 
 Ballot = connect(mapStateToProps)(Ballot);

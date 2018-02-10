@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import categories from './categories';
+import data from './data';
 import user from './user';
 import votes from './votes';
 
 const oscarsApp = combineReducers({
-  categories,
+  data,
   user,
   votes,
 });

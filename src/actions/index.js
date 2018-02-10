@@ -1,6 +1,15 @@
-export const getCategories = () => ({
-  type: 'GET_CATEGORIES',
-});
+import database from '../firebase';
+
+export const getData = () => {
+  return dispatch => {
+    database.once('value').then(snapshot => {
+      dispatch({
+        type: 'GET_DATA',
+        payload: snapshot.val(),
+      });
+    });
+  };
+};
 
 export const saveUserData = (league, email) => ({
   type: 'SAVE_USER_DATA',
