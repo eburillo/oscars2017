@@ -2,8 +2,15 @@
 @import url("app.css");
 @import url("ballot.css");
 @import url("summary.css");
+@import url("loginPage.css");
 
 #root {
   font-size: 16px;
   font-family: sans-serif;
+}
+
+/* button style reset */
+button, input {
+  background: none;
+  border: none;
 }

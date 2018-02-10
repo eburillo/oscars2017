@@ -1,0 +1,40 @@
+.login-page-grid {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows:  1fr 2fr 1fr;
+}
+
+.login-form {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form > label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 20rem;
+}
+
+.login-page_input {
+  background: lightgray;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+}
+
+.login-page_button {
+  background: lightgray;
+  height: 2.5rem;
+  width: 100%;
+  max-width: 20rem;
+}

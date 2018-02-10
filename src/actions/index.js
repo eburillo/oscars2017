@@ -11,10 +11,10 @@ export const getData = () => {
   };
 };
 
-export const saveUserData = (league, email) => ({
+export const saveUserData = (email, password) => ({
   type: 'SAVE_USER_DATA',
-  league,
   email,
+  password
 });
 
 export const sendVotes = () => ({

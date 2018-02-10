@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
 import { getData } from './actions';
-import UserForm from './components/UserForm';
+import LoginPage from './components/LoginPage';
 import Ballot from './components/Ballot';
 import Summary from './components/Summary';
 import reducers from './reducers';
@@ -22,8 +22,8 @@ store.dispatch(getData());
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      {/* <Route path="/" component={UserForm} /> */}
-      <Route path="/" component={Ballot} />
+      <Route path="/" component={LoginPage} />
+      <Route path="/ballot" component={Ballot} />
       <Route path="summary" component={Summary} />
     </Router>
   </Provider>,
