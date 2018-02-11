@@ -21,7 +21,8 @@ class LoginPage extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.state.isNewUser ? this.handleSignUp() : this.handleLogIn();
+    // this.state.isNewUser ? this.handleSignUp() : this.handleLogIn();
+    this.handleLogIn();
   }
 
   handleSignUp = () => {
@@ -30,7 +31,7 @@ class LoginPage extends Component {
       .createUserWithEmailAndPassword(email, password)
       .then(user => {
         console.log(user);
-        this.storeDataAndGoToBallot(user.uid);
+        this.storeDataAndGoToOverview(user.uid);
       })
       .catch(error => {
         const errorCode = error.code;
@@ -41,16 +42,18 @@ class LoginPage extends Component {
 
   handleLogIn = () => {
     const { email, password } = this.state;
+    const { router } = this.props;
     // log in with firebase and navigate
-    // this.storeDataAndGoToBallot();
+    // this.storeDataAndGoToOverview();
     console.log('log in handler');
+    router.push('/overview');
   };
 
-  storeDataAndGoToBallot = uid => {
+  storeDataAndGoToOverview = uid => {
     const { dispatch, router } = this.props;
     const { email, password } = this.state;
     dispatch(saveUserData(uid, email, password));
-    router.push('/ballot');
+    router.push('/overview');
   };
 
   render = () => (

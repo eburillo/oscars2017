@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 
 import { getData } from './actions';
 import LoginPage from './components/LoginPage';
+import OverviewPage from './components/OverviewPage';
 import Ballot from './components/Ballot';
 import Summary from './components/Summary';
 import reducers from './reducers';
@@ -23,8 +24,9 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={LoginPage} />
-      <Route path="/ballot" component={Ballot} />
+      <Route path="ballot" component={Ballot} />
       <Route path="summary" component={Summary} />
+      <Route path="overview" component={OverviewPage} />
     </Router>
   </Provider>,
   document.getElementById('root')
