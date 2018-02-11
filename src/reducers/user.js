@@ -1,6 +1,7 @@
 const initialState = {
-  league: '',
-  email: '',
+  games: [],
+  uid: '',
+  username: '',
   isLogged: false,
   hasVoted: false,
 };
@@ -9,8 +10,8 @@ const users = (state = initialState, action) => {
   switch (action.type) {
     case 'SAVE_USER_DATA':
       return Object.assign(state, {
-        league: action.league,
-        email: action.email,
+        uid: action.uid,
+        username: action.username,
         isLogged: true,
       });
     case 'SEND_VOTES':

@@ -1,4 +1,4 @@
-import database from '../firebase';
+import { database } from '../firebase';
 
 export const getData = () => {
   return dispatch => {
@@ -11,10 +11,10 @@ export const getData = () => {
   };
 };
 
-export const saveUserData = (email, password) => ({
+export const saveUserData = (uid, username) => ({
   type: 'SAVE_USER_DATA',
-  email,
-  password
+  uid,
+  username,
 });
 
 export const sendVotes = () => ({
