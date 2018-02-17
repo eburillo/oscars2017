@@ -7,12 +7,14 @@ class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isNewUser: true,
+      isNewUser: false,
       username: '',
       email: '',
       password: '',
     };
   }
+
+  toggleForm = () => this.setState(prevState => ({ isNewUser: !prevState.isNewUser }));
 
   handleChange(e) {
     const { name, value } = e.target;
@@ -21,8 +23,7 @@ class LoginPage extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // this.state.isNewUser ? this.handleSignUp() : this.handleLogIn();
-    this.handleLogIn();
+    this.state.isNewUser ? this.handleSignUp() : this.handleLogIn();
   }
 
   handleSignUp = () => {
@@ -36,17 +37,24 @@ class LoginPage extends Component {
       .catch(error => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage);
+        console.log(`${errorCode}: ${errorMessage}`);
       });
   };
 
   handleLogIn = () => {
     const { email, password } = this.state;
-    const { router } = this.props;
-    // log in with firebase and navigate
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(user => {
+        console.log(user);
+        this.storeDataAndGoToOverview(user.uid);
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(`${errorCode}: ${errorMessage}`);
+      });
     // this.storeDataAndGoToOverview();
-    console.log('log in handler');
-    router.push('/overview');
   };
 
   storeDataAndGoToOverview = uid => {
@@ -90,8 +98,15 @@ class LoginPage extends Component {
             required
           />
         </label>
-        <input type="submit" value="Log in" className="login-page_button" />
+        <input
+          type="submit"
+          value={this.state.isNewUser ? 'Sign up' : 'Log in'}
+          className="login-page_button"
+        />
       </form>
+      <button className="toggle-form_button" onClick={this.toggleForm}>
+        {this.state.isNewUser ? "I'm registered" : "I'm a new user"}
+      </button>
     </section>
   );
 }

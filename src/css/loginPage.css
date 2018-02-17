@@ -38,3 +38,10 @@
   width: 100%;
   max-width: 20rem;
 }
+
+.toggle-form_button {
+  grid-row: 3;
+  grid-column: 2;
+  max-height: 2.5rem;
+  background: lightblue;
+}
