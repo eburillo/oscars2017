@@ -26,13 +26,10 @@ class LoginPage extends Component {
   }
 
   handleSignUp = () => {
-    const { email, password } = this.state;
+    const { username, email, password } = this.state;
     this.props
-      .singUp(email, password)
-      .then(user => {
-        console.log(user);
-        this.storeDataAndGoToOverview(user.uid);
-      })
+      .signUp(username, email, password)
+      .then(() => this.goToOverview())
       .catch(error => console.log(`${error.code}: ${error.message}`));
   };
 
@@ -40,18 +37,14 @@ class LoginPage extends Component {
     const { email, password } = this.state;
     this.props
       .login(email, password)
-      .then(user => {
-        console.log(user);
-        this.storeDataAndGoToOverview(user.uid);
-      })
+      .then(() => this.goToOverview())
       .catch(error => console.log(`${error.code}: ${error.message}`));
-    this.storeDataAndGoToOverview();
   };
 
-  storeDataAndGoToOverview = uid => {
-    const { saveUserData, router } = this.props;
-    const { email, password } = this.state;
-    saveUserData(uid, email, password);
+  goToOverview = () => {
+    const { router } = this.props;
+    // const { email, password } = this.state;
+    // saveUserData(uid, email, password);
     router.push('/overview');
   };
 
