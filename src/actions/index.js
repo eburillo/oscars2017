@@ -1,30 +1,4 @@
-import { database } from '../firebase';
+import { getData, sendVotes, voteCandidate } from './votes';
+import { login, signUp, saveUserData } from './user';
 
-export const getData = () => {
-  return dispatch => {
-    database.once('value').then(snapshot => {
-      dispatch({
-        type: 'GET_DATA',
-        payload: snapshot.val(),
-      });
-    });
-  };
-};
-
-export const saveUserData = (uid, username) => ({
-  type: 'SAVE_USER_DATA',
-  uid,
-  username,
-});
-
-export const sendVotes = () => ({
-  type: 'SEND_VOTES',
-});
-
-export const voteCandidate = (categoryId, movieId, category, candidateTitle) => ({
-  type: 'VOTE_CANDIDATE',
-  categoryId,
-  movieId,
-  category,
-  candidateTitle,
-});
+export { getData, login, saveUserData, sendVotes, signUp, voteCandidate };

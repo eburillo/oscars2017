@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { auth } from '../firebase';
-import { saveUserData } from '../actions';
+import { login, signUp, saveUserData } from '../actions';
 
 class LoginPage extends Component {
   constructor(props) {
@@ -28,39 +27,31 @@ class LoginPage extends Component {
 
   handleSignUp = () => {
     const { email, password } = this.state;
-    auth
-      .createUserWithEmailAndPassword(email, password)
+    this.props
+      .singUp(email, password)
       .then(user => {
         console.log(user);
         this.storeDataAndGoToOverview(user.uid);
       })
-      .catch(error => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(`${errorCode}: ${errorMessage}`);
-      });
+      .catch(error => console.log(`${error.code}: ${error.message}`));
   };
 
   handleLogIn = () => {
     const { email, password } = this.state;
-    auth
-      .signInWithEmailAndPassword(email, password)
+    this.props
+      .login(email, password)
       .then(user => {
         console.log(user);
         this.storeDataAndGoToOverview(user.uid);
       })
-      .catch(error => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(`${errorCode}: ${errorMessage}`);
-      });
-    // this.storeDataAndGoToOverview();
+      .catch(error => console.log(`${error.code}: ${error.message}`));
+    this.storeDataAndGoToOverview();
   };
 
   storeDataAndGoToOverview = uid => {
-    const { dispatch, router } = this.props;
+    const { saveUserData, router } = this.props;
     const { email, password } = this.state;
-    dispatch(saveUserData(uid, email, password));
+    saveUserData(uid, email, password);
     router.push('/overview');
   };
 
@@ -111,6 +102,6 @@ class LoginPage extends Component {
   );
 }
 
-LoginPage = connect()(LoginPage);
+LoginPage = connect(null, { login, signUp, saveUserData })(LoginPage);
 
 export default LoginPage;
