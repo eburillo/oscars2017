@@ -1,0 +1,23 @@
+.overview-page {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+}
+
+.overview-title {
+    height: 10vh;
+}
+
+.current-games-list {
+  height: 45vh;
+}
+
+.more-games-menu {
+  height: 45vh;
+}
+
+.join-game-form {
+  margin-bottom: 10px;
+}

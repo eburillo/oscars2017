@@ -4,7 +4,6 @@
   height: 100vh;
   justify-content: center;
   align-content: center;
-  display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows:  1fr 2fr 1fr;
 }
