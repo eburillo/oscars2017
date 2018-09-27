@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 class OverviewPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isJoinGameActive: true,
+      isJoinGameActive: true
     };
   }
 
@@ -24,10 +23,12 @@ class OverviewPage extends Component {
 
   handleCreateGame() {
     console.log('create new game');
+    this.props.router.push('/ballot');
   }
 
   handleJoinGame() {
     console.log('join new game');
+    this.props.router.push('/ballot');
   }
 
   handleGoToSummary(gameId) {
@@ -98,7 +99,5 @@ class OverviewPage extends Component {
     </section>
   );
 }
-
-OverviewPage = connect()(OverviewPage);
 
 export default OverviewPage;

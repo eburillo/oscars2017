@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { any, propEq } from 'ramda';
-import { sendVotes } from '../actions';
 
 class SubmitButton extends Component {
   handleSubmit = () => {
@@ -10,20 +8,14 @@ class SubmitButton extends Component {
   };
 
   sendVotes = () => {
-    const { dispatch, router } = this.props;
-    dispatch(sendVotes());
-    router.push('/summary');
+    this.props.router.push('/summary');
   };
 
   render = () => (
-    <button className="submit-button" onClick={() => this.handleSubmit()}>Submit</button>
+    <button className="submit-button" onClick={() => this.handleSubmit()}>
+      Submit
+    </button>
   );
 }
-
-const mapStateToProps = state => ({
-  votes: state.votes,
-});
-
-SubmitButton = connect(mapStateToProps)(SubmitButton);
 
 export default SubmitButton;

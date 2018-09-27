@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Category from './Category';
 import SubmitButton from './SubmitButton';
+import oscarsJSON from '../api/oscars.json';
+import { propOr } from 'ramda';
+
+const categoriesList = propOr([], 'categories')(oscarsJSON);
+const categories = categoriesList.map(cat => ({
+  films: oscarsJSON.films,
+  candidates: cat.candidates,
+  category: cat.id,
+  categoryName: cat.title,
+  voteName: null,
+  vote: null
+}));
 
 class Ballot extends Component {
+  // TODO this is deprecated
   componentWillMount() {
-    this.checkAuth();
+    // this.checkAuth();
   }
 
   checkAuth() {
@@ -15,8 +27,12 @@ class Ballot extends Component {
     }
   }
 
+  voteCandidate(categoryId, movieId, category, candidateTitle) {
+    console.log(categoryId, movieId, category, candidateTitle);
+  }
+
   render() {
-    const { categories, router } = this.props;
+    const { router } = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -28,18 +44,10 @@ class Ballot extends Component {
           </ul>
           <SubmitButton router={router} />
         </main>
-        <footer className="App-footer">
-          2018
-        </footer>
+        <footer className="App-footer">2018</footer>
       </div>
     );
   }
 }
-
-const mapStateToProps = state => {
-  return { categories: state.data.categories, user: state.user };
-};
-
-Ballot = connect(mapStateToProps)(Ballot);
 
 export default Ballot;

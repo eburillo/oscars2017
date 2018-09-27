@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { pathOr } from 'ramda';
 import Candidate from './Candidate.js';
 
@@ -27,9 +26,5 @@ class Category extends Component {
     );
   }
 }
-
-const mapStateToProps = state => ({ films: state.data.films });
-
-Category = connect(mapStateToProps)(Category);
 
 export default Category;
