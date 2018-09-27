@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { login, signUp, saveUserData } from '../actions';
 
 class LoginPage extends Component {
   constructor(props) {
@@ -9,7 +7,7 @@ class LoginPage extends Component {
       isNewUser: false,
       username: '',
       email: '',
-      password: '',
+      password: ''
     };
   }
 
@@ -27,32 +25,23 @@ class LoginPage extends Component {
 
   handleSignUp = () => {
     const { username, email, password } = this.state;
-    this.props
-      .signUp(username, email, password)
-      .then(() => this.goToOverview())
-      .catch(error => console.log(`${error.code}: ${error.message}`));
+    this.goToOverview();
   };
 
   handleLogIn = () => {
     const { email, password } = this.state;
-    this.props
-      .login(email, password)
-      .then(() => this.goToOverview())
-      .catch(error => console.log(`${error.code}: ${error.message}`));
+    this.goToOverview();
   };
 
   goToOverview = () => {
     const { router } = this.props;
-    // const { email, password } = this.state;
-    // saveUserData(uid, email, password);
     router.push('/overview');
-    // test git
   };
 
   render = () => (
     <section className="login-page-grid">
       <form onSubmit={e => this.handleSubmit(e)} className="login-form">
-        {this.state.isNewUser &&
+        {this.state.isNewUser && (
           <label className="login-page_username-field">
             <span>Name</span>
             <input
@@ -62,7 +51,8 @@ class LoginPage extends Component {
               className="login-page_input"
               required
             />
-          </label>}
+          </label>
+        )}
         <label className="login-page_email-field">
           <span>Email</span>
           <input
@@ -95,7 +85,5 @@ class LoginPage extends Component {
     </section>
   );
 }
-
-LoginPage = connect(null, { login, signUp, saveUserData })(LoginPage);
 
 export default LoginPage;
