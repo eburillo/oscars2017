@@ -3,19 +3,19 @@ import { pathOr } from 'ramda';
 import Candidate from './Candidate.js';
 
 class Category extends Component {
-  getCandidateTitle = id => pathOr('', ['films', id, this.props.primary], this.props);
+  getCandidateTitle = id => pathOr('', ['films', id, this.props.filmField], this.props);
 
   render() {
-    const { candidates, id, title } = this.props;
+    const { candidates, category, categoryName } = this.props;
     return (
       <div className="category-block">
-        <h2 className="category-title">{title}</h2>
+        <h2 className="category-title">{categoryName}</h2>
         <ul className="category-candidates">
           {candidates.map((movieId, i) => (
             <Candidate
               candidateTitle={this.getCandidateTitle(movieId)}
-              categoryId={id}
-              category={title}
+              category={category}
+              categoryName={categoryName}
               movieId={movieId}
               candidateKey={i}
               key={i}
