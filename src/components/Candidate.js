@@ -17,7 +17,7 @@ class Candidate extends React.PureComponent {
       candidateKey
     } = this.props;
 
-    return <div className="candidate-block">
+    return (<li className="candidate-block">
       <input
         id={`${category}-${candidateKey}`}
         type="radio"
@@ -29,7 +29,7 @@ class Candidate extends React.PureComponent {
         <span className="candidate-title">{candidateTitle}</span>
         <Icon icon={'star'}/>
       </label>
-    </div>
+    </li>)
   }
 };
 
