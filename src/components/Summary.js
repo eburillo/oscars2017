@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class Summary extends Component {
-
   // TODO: remove this
-  componentWillMount() {
-    // this.checkAuth();
-  }
+  // componentWillMount() {
+  //   this.checkAuth();
+  // }
 
   checkAuth() {
-    const { router, user } = this.props;
+    const { router, user } = this.props
     if (!user.isLogged || !user.hasVoted) {
-      router.push('/');
+      router.push('/')
     }
   }
 
@@ -22,8 +21,8 @@ class Summary extends Component {
           <div key={vote.category}>{`${vote.categoryName} - ${vote.voteName}`} </div>
         ))}
       </div>
-    );
+    )
   }
 }
 
-export default Summary;
+export default Summary

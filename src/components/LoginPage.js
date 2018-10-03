@@ -1,42 +1,42 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class LoginPage extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       isNewUser: false,
       username: '',
       email: '',
-      password: ''
-    };
+      password: '',
+    }
   }
 
-  toggleForm = () => this.setState(prevState => ({ isNewUser: !prevState.isNewUser }));
+  toggleForm = () => this.setState(prevState => ({ isNewUser: !prevState.isNewUser }))
 
   handleChange(e) {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
+    const { name, value } = e.target
+    this.setState({ [name]: value })
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    this.state.isNewUser ? this.handleSignUp() : this.handleLogIn();
+    e.preventDefault()
+    this.state.isNewUser ? this.handleSignUp() : this.handleLogIn()
   }
 
   handleSignUp = () => {
-    const { username, email, password } = this.state;
-    this.goToOverview();
-  };
+    const { username, email, password } = this.state
+    this.goToOverview()
+  }
 
   handleLogIn = () => {
-    const { email, password } = this.state;
-    this.goToOverview();
-  };
+    const { email, password } = this.state
+    this.goToOverview()
+  }
 
   goToOverview = () => {
-    const { router } = this.props;
-    router.push('/overview');
-  };
+    const { router } = this.props
+    router.push('/overview')
+  }
 
   render = () => (
     <section className="login-page-grid">
@@ -83,7 +83,7 @@ class LoginPage extends Component {
         {this.state.isNewUser ? "I'm registered" : "I'm a new user"}
       </button>
     </section>
-  );
+  )
 }
 
-export default LoginPage;
+export default LoginPage
