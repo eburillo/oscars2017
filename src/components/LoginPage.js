@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { getVotes, saveVotes } from '../helpers/storage';
 
 class LoginPage extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class LoginPage extends Component {
       isNewUser: false,
       username: '',
       email: '',
-      password: ''
+      password: '',
     };
   }
 
@@ -25,23 +26,25 @@ class LoginPage extends Component {
 
   handleSignUp = () => {
     const { username, email, password } = this.state;
-    this.goToOverview();
   };
 
   handleLogIn = () => {
+    const { router } = this.props;
     const { email, password } = this.state;
-    this.goToOverview();
+
+    getVotes(email) ? router.push('overview') : this.goToBallot();
   };
 
-  goToOverview = () => {
+  goToBallot = () => {
     const { router } = this.props;
-    router.push('/overview');
+    saveVotes(this.state.email, {});
+    router.push('ballot');
   };
 
   render = () => (
     <section className="login-page-grid">
       <form onSubmit={e => this.handleSubmit(e)} className="login-form">
-        {this.state.isNewUser && (
+        {this.state.isNewUser &&
           <label className="login-page_username-field">
             <span>Name</span>
             <input
@@ -51,8 +54,7 @@ class LoginPage extends Component {
               className="login-page_input"
               required
             />
-          </label>
-        )}
+          </label>}
         <label className="login-page_email-field">
           <span>Email</span>
           <input

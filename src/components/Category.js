@@ -6,7 +6,8 @@ class Category extends Component {
   getCandidateTitle = id => pathOr('', ['films', id, this.props.filmField], this.props);
 
   render() {
-    const { candidates, category, categoryName } = this.props;
+    const { candidates, category, categoryName, voteCandidate } = this.props;
+
     return (
       <div className="category-block">
         <h2 className="category-title">{categoryName}</h2>
@@ -19,6 +20,7 @@ class Category extends Component {
               movieId={movieId}
               candidateKey={i}
               key={i}
+              voteCandidate={voteCandidate}
             />
           ))}
         </ul>

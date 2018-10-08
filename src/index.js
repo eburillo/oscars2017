@@ -6,18 +6,16 @@ import LoginPage from './components/LoginPage';
 import OverviewPage from './components/OverviewPage';
 import Ballot from './components/Ballot';
 import Summary from './components/Summary';
-import registerServiceWorker from './registerServiceWorker';
 
 import './css/index.css';
 
 ReactDOM.render(
-    <Router history={browserHistory}>
-      <Route path="/" component={Ballot} />
+  <Router history={browserHistory}>
+    <Route path="/" component={LoginPage}>
       <Route path="ballot" component={Ballot} />
       <Route path="summary" component={Summary} />
       <Route path="overview" component={OverviewPage} />
-    </Router>,
+    </Route>
+  </Router>,
   document.getElementById('root')
 );
-
-registerServiceWorker();

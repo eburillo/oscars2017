@@ -1,10 +1,12 @@
+// DEPRECATED FOR NOW
+
 import React, { Component } from 'react';
 
 class OverviewPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isJoinGameActive: true
+      isJoinGameActive: true,
     };
   }
 
