@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { pathOr } from 'ramda';
-import Candidate from './Candidate.js';
+import React, { Component } from 'react'
+import { pathOr } from 'ramda'
+import Candidate from './Candidate.js'
 
 class Category extends Component {
-  getCandidateTitle = id => pathOr('', ['films', id, this.props.filmField], this.props);
+  getCandidateTitle = id => pathOr('', ['films', id, this.props.filmField], this.props)
 
   render() {
-    const { candidates, category, categoryName, voteCandidate } = this.props;
+    const { candidates, category, categoryName, voteCandidate } = this.props
 
     return (
       <div className="category-block">
@@ -25,8 +25,8 @@ class Category extends Component {
           ))}
         </ul>
       </div>
-    );
+    )
   }
 }
 
-export default Category;
+export default Category

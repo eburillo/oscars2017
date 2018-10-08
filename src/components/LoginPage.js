@@ -1,50 +1,50 @@
-import React, { Component } from 'react';
-import { getVotes, saveVotes } from '../helpers/storage';
+import React, { Component } from 'react'
+import { getVotes, saveVotes } from '../helpers/storage'
 
 class LoginPage extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       isNewUser: false,
       username: '',
       email: '',
       password: '',
-    };
+    }
   }
 
-  toggleForm = () => this.setState(prevState => ({ isNewUser: !prevState.isNewUser }));
+  toggleForm = () => this.setState(prevState => ({ isNewUser: !prevState.isNewUser }))
 
   handleChange(e) {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
+    const { name, value } = e.target
+    this.setState({ [name]: value })
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    this.state.isNewUser ? this.handleSignUp() : this.handleLogIn();
+    e.preventDefault()
+    this.state.isNewUser ? this.handleSignUp() : this.handleLogIn()
   }
 
   handleSignUp = () => {
-    const { username, email, password } = this.state;
-  };
+    const { username, email, password } = this.state
+  }
 
   handleLogIn = () => {
-    const { router } = this.props;
-    const { email, password } = this.state;
+    const { router } = this.props
+    const { email, password } = this.state
 
-    getVotes(email) ? router.push('overview') : this.goToBallot();
-  };
+    getVotes(email) ? router.push('overview') : this.goToBallot()
+  }
 
   goToBallot = () => {
-    const { router } = this.props;
-    saveVotes(this.state.email, {});
-    router.push('ballot');
-  };
+    const { router } = this.props
+    saveVotes(this.state.email, {})
+    router.push('ballot')
+  }
 
   render = () => (
     <section className="login-page-grid">
       <form onSubmit={e => this.handleSubmit(e)} className="login-form">
-        {this.state.isNewUser &&
+        {this.state.isNewUser && (
           <label className="login-page_username-field">
             <span>Name</span>
             <input
@@ -54,7 +54,8 @@ class LoginPage extends Component {
               className="login-page_input"
               required
             />
-          </label>}
+          </label>
+        )}
         <label className="login-page_email-field">
           <span>Email</span>
           <input
@@ -85,7 +86,7 @@ class LoginPage extends Component {
         {this.state.isNewUser ? "I'm registered" : "I'm a new user"}
       </button>
     </section>
-  );
+  )
 }
 
-export default LoginPage;
+export default LoginPage

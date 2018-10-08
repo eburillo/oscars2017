@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
-import Category from './Category';
-import SubmitButton from './SubmitButton';
-import oscarsJSON from '../api/oscars-dev.json';
-import { saveVotes } from '../helpers/storage';
-import { prop } from 'ramda';
+import React, { Component } from 'react'
+import { prop } from 'ramda'
+import Category from './Category'
+import oscarsJSON from '../api/oscars-dev.json'
+import { saveVotes } from '../helpers/storage'
 
 class Ballot extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       categories: this.getCategories(),
       votes: {},
-    };
+    }
   }
 
   // TODO this is deprecated
@@ -33,33 +32,32 @@ class Ballot extends Component {
       categoryName: cat.title,
       filmField: cat.primary,
       voteCandidate: this.voteCandidate,
-    }));
+    }))
 
   voteCandidate = (categoryId, movieId, category, candidateTitle) => {
-    console.log(categoryId, movieId, category, candidateTitle);
+    console.log(categoryId, movieId, category, candidateTitle)
     const cat = {
       movieId,
       candidateTitle,
-    };
+    }
     this.setState({
       votes: { ...this.state.votes, [categoryId]: cat },
-    });
-  };
+    })
+  }
 
   handleSubmit = () => {
-    const { email } = this.props;
-    const { categories, votes } = this.state;
-    console.log('submit');
-    console.log('votes', votes);
+    const { email } = this.props
+    const { categories, votes } = this.state
+    console.log('submit')
+    console.log('votes', votes)
     if (Object.keys(votes).length === categories.length) {
-      saveVotes(email, JSON.stringify(votes));
-      this.props.router.push('/summary');
+      saveVotes(email, JSON.stringify(votes))
+      this.props.router.push('/summary')
     }
-  };
+  }
 
   render() {
-    const { router } = this.props;
-    const { categories, votes } = this.state;
+    const { categories, votes } = this.state
 
     return (
       <div className="App">
@@ -78,8 +76,8 @@ class Ballot extends Component {
         </main>
         <footer className="App-footer">2018</footer>
       </div>
-    );
+    )
   }
 }
 
-export default Ballot;
+export default Ballot

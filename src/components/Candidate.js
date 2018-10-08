@@ -1,5 +1,5 @@
-import React from 'react';
-import Icon from './Icon';
+import React from 'react'
+import Icon from './Icon'
 
 class Candidate extends React.PureComponent {
   render() {
@@ -10,7 +10,7 @@ class Candidate extends React.PureComponent {
       movieId,
       candidateTitle,
       candidateKey,
-    } = this.props;
+    } = this.props
 
     return (
       <div className="candidate-block">
@@ -26,8 +26,8 @@ class Candidate extends React.PureComponent {
           <Icon icon={'star'} />
         </label>
       </div>
-    );
+    )
   }
 }
 
-export default Candidate;
+export default Candidate
