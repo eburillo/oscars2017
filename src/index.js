@@ -9,11 +9,10 @@ import './css/index.css'
 
 ReactDOM.render(
   <Router history={browserHistory}>
-    <Route path="/" component={LoginPage}>
-      <Route path="ballot" component={Ballot} />
-      <Route path="summary" component={Summary} />
-      <Route path="overview" component={OverviewPage} />
-    </Route>
+    <Route path="/" component={LoginPage} />
+    <Route path="ballot" component={Ballot} />
+    <Route path="summary" component={Summary} />
+    <Route path="overview" component={OverviewPage} />
   </Router>,
   document.getElementById('root')
 )
