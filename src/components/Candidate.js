@@ -1,10 +1,9 @@
-import React from 'react';
-import Icon from './Icon';
+import React from 'react'
+import Icon from './Icon'
 
 class Candidate extends React.PureComponent {
-
   voteCandidate = (category, movieId, categoryName, candidateTitle) => {
-    console.log('vote!');
+    console.log('vote!')
   }
 
   render() {
@@ -14,23 +13,25 @@ class Candidate extends React.PureComponent {
       categoryName,
       movieId,
       candidateTitle,
-      candidateKey
-    } = this.props;
+      candidateKey,
+    } = this.props
 
-    return <div className="candidate-block">
-      <input
-        id={`${category}-${candidateKey}`}
-        type="radio"
-        name={categoryName}
-        value={candidateTitle}
-        onClick={() => this.voteCandidate(category, movieId, categoryName, candidateTitle)}
-      />
-      <label htmlFor={`${category}-${candidateKey}`}>
-        <span className="candidate-title">{candidateTitle}</span>
-        <Icon icon={'star'}/>
-      </label>
-    </div>
+    return (
+      <li className="candidate-block">
+        <input
+          id={`${category}-${candidateKey}`}
+          type="radio"
+          name={categoryName}
+          value={candidateTitle}
+          onClick={() => this.voteCandidate(category, movieId, categoryName, candidateTitle)}
+        />
+        <label htmlFor={`${category}-${candidateKey}`}>
+          <span className="candidate-title">{candidateTitle}</span>
+          <Icon icon={'star'} />
+        </label>
+      </li>
+    )
   }
-};
+}
 
-export default Candidate;
+export default Candidate

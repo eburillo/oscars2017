@@ -1,38 +1,37 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class OverviewPage extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      isJoinGameActive: true
-    };
+      isJoinGameActive: true,
+    }
   }
 
-  toggleForm = () =>
-    this.setState(prevState => ({ isJoinGameActive: !prevState.isJoinGameActive }));
+  toggleForm = () => this.setState(prevState => ({ isJoinGameActive: !prevState.isJoinGameActive }))
 
   handleChange(e) {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
+    const { name, value } = e.target
+    this.setState({ [name]: value })
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    this.state.isJoinGameActive ? this.handleJoinGame() : this.handleCreateGame();
+    e.preventDefault()
+    this.state.isJoinGameActive ? this.handleJoinGame() : this.handleCreateGame()
   }
 
   handleCreateGame() {
-    console.log('create new game');
-    this.props.router.push('/ballot');
+    console.log('create new game')
+    this.props.router.push('/ballot')
   }
 
   handleJoinGame() {
-    console.log('join new game');
-    this.props.router.push('/ballot');
+    console.log('join new game')
+    this.props.router.push('/ballot')
   }
 
   handleGoToSummary(gameId) {
-    console.log('go to game summary', gameId);
+    console.log('go to game summary', gameId)
   }
 
   renderGame(game) {
@@ -41,7 +40,7 @@ class OverviewPage extends Component {
         <span className="game-name">{game.name}</span>
         <button onClick={() => this.handleGoToSummary(game.id)}>Summary</button>
       </div>
-    );
+    )
   }
 
   render = () => (
@@ -97,7 +96,7 @@ class OverviewPage extends Component {
         </section>
       </div>
     </section>
-  );
+  )
 }
 
-export default OverviewPage;
+export default OverviewPage

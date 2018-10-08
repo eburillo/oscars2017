@@ -4,6 +4,8 @@
 }
 
 .ballot-grid {
+  padding: 0;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -27,6 +29,7 @@
 .category-candidates {
   display: flex;
   flex-direction: column;
+  padding: 0;
 }
 
 .candidate-block {
@@ -35,7 +38,6 @@
 }
 
 .candidate-block > label {
-    width: 100%;
     min-height: 2rem;
     display: block;
     display: flex;

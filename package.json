@@ -13,9 +13,20 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-config-prettier": "3.1.0",
+    "eslint-config-react-app": "3.0.3",
+    "eslint-plugin-flowtype": "2.50.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "3.0.0",
+    "eslint-plugin-react": "7.11.1",
+    "prettier": "1.14.3",
     "react-scripts": "1.0.17"
   },
   "scripts": {
+    "lint": "eslint src/**.js src/**/**.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
