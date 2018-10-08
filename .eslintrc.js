@@ -6,11 +6,11 @@ module.exports = Object.assign({}, createReactConfig, {
   rules: Object.assign({}, createReactConfig.rules, {
     'prettier/prettier': 'error',
     'no-param-reassign': 'off',
-		'import/no-unresolved': 'off',
-		'import/extensions': 'off',
-		'no-unused-expressions': ['error', { allowTernary: true, allowTaggedTemplates: true }],
-		'no-use-before-define': ['error', 'nofunc'],
-		'react/prop-types': 0,
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    'no-unused-expressions': ['error', { allowTernary: true, allowTaggedTemplates: true }],
+    'no-use-before-define': ['error', 'nofunc'],
+    'react/prop-types': 0,
     'class-methods-use-this': 'off'
   })
 })
