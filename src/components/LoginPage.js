@@ -1,12 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+import { getVotes, saveVotes } from '../helpers/storage'
 
 class LoginPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
       isNewUser: false,
-      username: '',
-      email: '',
+      userName: '',
+      // email: '',
       password: '',
     }
   }
@@ -24,55 +25,59 @@ class LoginPage extends Component {
   }
 
   handleSignUp = () => {
-    const { username, email, password } = this.state
-    this.goToOverview()
+    const { username, password } = this.state
   }
 
   handleLogIn = () => {
-    const { email, password } = this.state
-    this.goToOverview()
+    const { router } = this.props
+    const { userName, password } = this.state
+
+    getVotes(userName) ? router.push('overview') : this.goToBallot()
   }
 
-  goToOverview = () => {
+  goToBallot = () => {
     const { router } = this.props
-    router.push('/overview')
+    saveVotes(this.state.userName, {})
+    router.push('ballot')
   }
 
   render = () => (
     <section className="login-page-grid">
       <form onSubmit={e => this.handleSubmit(e)} className="login-form">
+        <label className="login-page_username-field">
+          <span>Name</span>
+          <input
+            onChange={e => this.handleChange(e)}
+            type="username"
+            name="username"
+            className="login-page_input"
+            required
+          />
+        </label>
         {this.state.isNewUser && (
-          <label className="login-page_username-field">
-            <span>Name</span>
-            <input
-              onChange={e => this.handleChange(e)}
-              type="username"
-              name="username"
-              className="login-page_input"
-              required
-            />
-          </label>
+          <Fragment>
+            <label className="login-page_email-field">
+              <span>Email</span>
+              <input
+                onChange={e => this.handleChange(e)}
+                type="email"
+                name="email"
+                className="login-page_input"
+                required
+              />
+            </label>
+            <label className="login-page_password-field">
+              <span>Password</span>
+              <input
+                onChange={e => this.handleChange(e)}
+                type="password"
+                name="password"
+                className="login-page_input"
+                required
+              />
+            </label>
+          </Fragment>
         )}
-        <label className="login-page_email-field">
-          <span>Email</span>
-          <input
-            onChange={e => this.handleChange(e)}
-            type="email"
-            name="email"
-            className="login-page_input"
-            required
-          />
-        </label>
-        <label className="login-page_password-field">
-          <span>Password</span>
-          <input
-            onChange={e => this.handleChange(e)}
-            type="password"
-            name="password"
-            className="login-page_input"
-            required
-          />
-        </label>
         <input
           type="submit"
           value={this.state.isNewUser ? 'Sign up' : 'Log in'}

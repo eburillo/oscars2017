@@ -1,3 +1,5 @@
+// DEPRECATED FOR NOW
+
 import React, { Component } from 'react'
 
 class OverviewPage extends Component {
